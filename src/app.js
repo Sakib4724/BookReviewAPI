@@ -1,9 +1,14 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
+
 const connectToDB = require("./config/database");
+const authRouter = require("./routes/auth");
 
 const PORT = process.env.PORT || 5000;
+app.use(express.json());
+
+app.use("/", authRouter);
 
 connectToDB().then(() => {
     console.log("Database connection established!");
