@@ -18,7 +18,7 @@ const reviewSchema = new mongoose.Schema({
         max: 5
     },
     comment: {
-        type: string,
+        type: String,
         required: true
     },
 }, { timestamps: true });
